@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 @admin.register(slider)
 class sliderAdmin(admin.ModelAdmin):
-    list_display = ['photo_display', 'description']
+    list_display = ['description', 'photo_display']
 
     def photo_display(self, obj):
-        return mark_safe('<img src="%s" style="width: 45px; height:45px;" />' % obj.photo_url)
+        return mark_safe('<img src="%s" style="width: 45px; height:45px;" />' % obj.photo.url)
