@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'page.apps.PageConfig',
     'easy_thumbnails',
     'filer',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [
