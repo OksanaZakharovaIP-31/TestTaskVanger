@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class photos(models.Model):
+class slider(models.Model):
     photo = models.ImageField(upload_to='img/photos')
     description = models.TextField()
 
