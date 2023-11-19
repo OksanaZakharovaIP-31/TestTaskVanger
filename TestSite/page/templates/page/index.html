@@ -9,12 +9,12 @@ MainPage
 {% block header %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
         <img src="static/img/566-5660404_printable-nasa-logo-nasa-new-logo-png-clipart.png" alt="nasa" width="10%" height="10%" style="margin-left: 5%">
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="background-color: #0A121E">
         <ul class="navbar-nav mx-auto order-0">
         <li class="nav-item">
           <a class="nav-link" href="#advantages" style="color: white">ПРЕИМУЩЕСТВА</a>
@@ -25,42 +25,64 @@ MainPage
             </ul>
 
     </div>
-<button type="button" class="btn btn-danger" style="margin-right: 5%">Вход</button>
+    <form action="" style="margin-right: 5%">
+<button type="button" class="btn btn-danger" >Вход</button>
+    </form>
 
 </nav>
 
 {% endblock %}
 
 {% block content %}
-<div class="space">
+<div class="container">
+    <div class="row text-center">
+        <div class="col main-info pt-5">
     <!--
     главная информация
     -->
-    <h1>
-        Космическое&nbspагенство
-   </h1>
-    <p style="font-size: 1.5rem">
-        Национальное&nbspуправление&nbspпо&nbspаэронавтике&nbspи&nbspисследованию&nbspкосмического&nbspпространства&nbsp-&nbspведомство,&nbsp
-        относящееся&nbspк&nbspфедеральному&nbspправительству&nbsp
-        США&nbspи&nbspподчиняющееся&nbspнепосредственно&nbspпрезиденту&nbspСША.
+    <h2 class="main-title">
+        Космическое агентство
+   </h2>
+    <p class="main-text">
+        Национальное управление по аэронавтике и исследованию космического
+        пространства — ведомство, относящееся к федеральному правительству
+        США и подчиняющееся непосредственно президенту США.
     </p>
-    </div><div style="padding-right:100px auto; padding-left:100px auto;" id="advantages">
-    <table class="table table-borderless" >
-  <tr>
-      <td align="center"><img src="static/img/free-icon-rocket-6317577.png" alt="shuttle" width="50px" height="50px"><br><br>
-          Спейс&nbspшаттлы&nbsp-&nbspпилотируемые корабли</td>
-      <td align="center"><img src="static/img/free-icon-telescope-8968481.png" alt="telescope" width="50px" height="50px"><br><br>
-          Лучшее&nbspтелескопичекое&nbspоборудование</td>
-      <td rowspan="2" align="center"><img src="static/img/unnamed.jpg" alt="space" class="photo" width="50%" height="50%"></td>
-  </tr>
-        <tr>
-            <td align="center"><img src="static/img/free-icon-moon-3901848.png" alt="moon" width="50px" height="50px"><br><br>
-                Целимся&nbspна&nbspЛуну&nbspи&nbspМарс</td>
-            <td align="center"><img src="static/img/free-icon-medal-5381739.png" alt="medal" width="50px" height="50px"><br><br>
-                Золотая&nbspмедаль&nbspпо&nbspнаучным&nbspисследованиям</td>
-        </tr>
-</table>
-</div>
+    </div>
+    </div>
+    </div>
+<div class="container">
+            <div class="additional-info row text-center">
+                <div class="col-md-6">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="icon col-6 ">
+                                <img src="{% static 'img/free-icon-rocket-6317577.png' %}" alt="shuttle" width="64px" height="64px">
+                                <h3 class="icon-title ">Спейс шаттлы — пилотируемые корабли</h3>
+                            </div>
+                            <div class="icon col-6 ">
+                                <img src="{% static 'img/free-icon-telescope-8968481.png' %}" alt="telescope" width="64px" height="64px">
+                                <h3 class="icon-title">Лучшее телескопическое оборудование</h3>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="icon col-6 ">
+                                <img src="{% static 'img/free-icon-moon-3901848.png' %}" alt="moon" width="64px" height="64px">
+                                <h3 class="icon-title">Целимся на Луну и Марс</h3>
+                            </div>
+                            <div class="icon col-6 ">
+                                <img src="{% static 'img/free-icon-medal-5381739.png' %}" alt="medal" width="64px" height="64px">
+                                <h3 class="icon-title">Золотая медаль по научным исследованиям</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="additional-img d-flex col-lg-6">
+                    <img src="{% static 'img/unnamed.jpg' %}" alt="space" width="350px" height="400px" style="border-radius: 50px">
+                </div>
+            </div>
+        </div>
+
+
 <div id="photo" class="photodiv">
     <p><h1 align="center" style="color: white">Фотографии</h1></p>
     <!--
@@ -78,7 +100,7 @@ MainPage
   <div class="slider slider-nav">
       {% for SliderPhoto in photo_slider_1 %}
     <div class="item">
-      <img src="{{ SliderPhoto.photo.url }}" alt="{{ SliderPhoto.description }}" width="2   00px" height="200px">
+      <img src="{{ SliderPhoto.photo.url }}" alt="{{ SliderPhoto.description }}" class="photo" width="200px" height="200px">
     </div>
       {% endfor %}
   </div>
