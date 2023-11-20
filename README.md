@@ -5,7 +5,7 @@
 
 1. Клонирование репозитория
 
-`https://github.com/OksanaZakharovaIP-31/PICASSO.git`
+`https://github.com/OksanaZakharovaIP-31/TestTaskVanger.git`
 
 2. Установка виртуального окружения и его активация
 
